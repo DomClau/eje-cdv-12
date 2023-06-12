@@ -15,8 +15,8 @@ alert("Este es el URL: " +getURL());*/
 let idSeleccionadoParaEliminar=0; //variable global
 let idSeleccionadoParaActualizar=0;
 function crearCategoria(){
-  const descripcionCategoria=document.getElementById('descripcionCategoriaAlta').value
-  const observacionesCategoria= document.getElementById('observacionesCategoriaAlta').value
+  const descripcionCategoria=document.getElementById('descripcionCategoriaAlta').value;
+  const observacionesCategoria= document.getElementById('observacionesCategoriaAlta').value;
 $.ajax({
   method:'POST', //Metodo
   url: window.location.origin+'/api/categorias', //end point
@@ -147,12 +147,12 @@ function identificaActualizar(id){
     method:"GET",
     url: window.location.origin+"/api/categorias/"+idSeleccionadoParaActualizar,
     data: {},
-    success: function( result ) {
+    success: function(result) {
       if(result.estado==1){
-        let categoria = result.categorias
+        let categoria = result.categorias;
         //mostramos en la ventana
-        document.getElementById('descripcionCategoriaActualizar').value=categoria.descripcion
-        document.getElementById('observacionesCategoriaActualizar').value=categoria.observaciones
+        document.getElementById('descripcionCategoriaActualizar').value=categoria.descripcion;
+        document.getElementById('observacionesCategoriaActualizar').value=categoria.observaciones;
         
       }else{
         alert(result.mensaje)
